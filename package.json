@@ -1,0 +1,41 @@
+{
+  "name": "mineflayer-web-bot",
+  "version": "1.0.0",
+  "description": "Mineflayer Web Bot 1.0.0 release. Mouse/keyboard control, integrated viewer, bundled plugins and automation.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "preinstall": "node scripts/check-node.js",
+    "start": "node scripts/check-node.js && node src/server.js",
+    "build": "node scripts/ensure-dist.js",
+    "check": "node --check src/server.js && node --check src/config.js && node --check src/bot-manager.js && node --check src/foods.js && node --check scripts/check-node.js && node --check scripts/check-runtime-deps.js && node --check scripts/init-config.js && node --check scripts/print-access.js && node --check scripts/print-url.js && node --check scripts/ensure-dist.js",
+    "install:optional": "npm install mineflayer-web-inventory@latest mineflayer-pvp@latest mineflayer-auto-eat@latest mineflayer-armor-manager@latest mineflayer-collectblock@latest mineflayer-tool@latest --save --omit=dev --legacy-peer-deps --no-audit --no-fund",
+    "setup": "node scripts/check-node.js && node scripts/init-config.js && npm install --omit=dev --legacy-peer-deps --no-audit --no-fund && node scripts/check-runtime-deps.js && npm run build",
+    "init-config": "node scripts/init-config.js",
+    "access": "node scripts/print-access.js",
+    "install:viewer": "npm install canvas@npm:@napi-rs/canvas@1.0.0 prismarine-viewer@latest --save --omit=dev --legacy-peer-deps --no-audit --no-fund",
+    "check:runtime": "node scripts/check-runtime-deps.js"
+  },
+  "dependencies": {
+    "canvas": "npm:@napi-rs/canvas@1.0.0",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "http-proxy": "^1.18.1",
+    "minecraft-protocol": "^1.66.2",
+    "mineflayer": "^4.37.1",
+    "mineflayer-pathfinder": "^2.4.5",
+    "morgan": "^1.11.0",
+    "prismarine-viewer": "^1.33.0",
+    "socket.io": "^4.7.5",
+    "vec3": "0.1.10",
+    "mineflayer-web-inventory": "latest",
+    "mineflayer-pvp": "latest",
+    "mineflayer-auto-eat": "latest",
+    "mineflayer-armor-manager": "latest",
+    "mineflayer-collectblock": "latest",
+    "mineflayer-tool": "latest"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

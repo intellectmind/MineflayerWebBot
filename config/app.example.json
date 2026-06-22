@@ -1,0 +1,74 @@
+{
+  "release": {
+    "name": "Mineflayer Web Bot",
+    "version": "1.0.0",
+    "profile": "release"
+  },
+  "web": {
+    "host": "0.0.0.0",
+    "port": 15666,
+    "adminPassword": "change-me",
+    "sessionSecret": "change-me",
+    "viewerBasePort": 3001,
+    "inventoryBasePort": 3101
+  },
+  "defaults": {
+    "server": {
+      "host": "127.0.0.1",
+      "port": 25565,
+      "version": false
+    },
+    "bot": {
+      "auth": "offline",
+      "authmeAutoLogin": true,
+      "authmeCommand": "/login {password}",
+      "authmeRegisterCommand": "/reg {password} {email}",
+      "authmeDelayMs": 1500,
+      "viewDistance": 6,
+      "firstPersonViewer": false,
+      "canDig": true,
+      "allow1by1towers": true,
+      "autoReconnect": true,
+      "reconnectDelayMs": 5000,
+      "autoEat": false,
+      "autoEatThreshold": 14,
+      "autoRespawn": true,
+      "enableWebInventory": true,
+      "enablePvpPlugin": true,
+      "enableAutoEatPlugin": true,
+      "enableArmorManager": true,
+      "enableCollectBlock": true,
+      "enableToolPlugin": true,
+      "authmeEmail": "",
+      "authmeAutoRegister": false,
+      "joinCommands": [],
+      "joinCommandDelayMs": 2500
+    }
+  },
+  "bots": [
+    {
+      "id": "bot1",
+      "username": "WebBot_1",
+      "auth": "offline",
+      "host": "127.0.0.1",
+      "port": 25565,
+      "version": false,
+      "authmePassword": "",
+      "viewerPort": 3001,
+      "webInventoryPort": 3101,
+      "authmeEmail": "",
+      "authmeAutoRegister": false,
+      "joinCommands": [],
+      "joinCommandDelayMs": 2500,
+      "enableWebInventory": true,
+      "enablePvpPlugin": true,
+      "enableAutoEatPlugin": true,
+      "enableArmorManager": true,
+      "enableCollectBlock": true,
+      "enableToolPlugin": true,
+      "canDig": true,
+      "allow1by1towers": true,
+      "autoEat": false
+    }
+  ]
+}
