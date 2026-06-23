@@ -18,7 +18,7 @@
     'Viewer':'视角','Online inventory':'在线背包','Refresh inventory':'刷新背包','Refresh players':'刷新玩家','Web inventory view':'Web 背包视图','Built-in inventory':'内置背包','Equipment':'装备栏','Quick bar':'快捷栏','Use in hand':'拿到手上','Drop item':'丢弃物品','Open web-inventory proxy':'打开 web-inventory 代理','Players':'玩家','Click refresh inventory.':'点击刷新背包。','Click refresh players.':'点击刷新玩家。','Attack':'攻击','Empty':'空',
     'Integrated map':'视角','Open new window':'新窗口打开','Start a bot first. The viewer is proxied through the main web port.':'请先启动机器人。视角已通过主 Web 端口代理。',
     'Guard area':'区域守卫','guarding':'守卫中','stopped':'已停止','Center X':'中心 X','Center Y':'中心 Y','Center Z':'中心 Z','Radius':'半径','Mode':'模式','hostile mobs':'敌对生物','players':'玩家','all mobs/players':'全部生物/玩家','Interval ms':'间隔毫秒','Return home':'返回守卫点','Start guard':'开始守卫','Stop guard':'停止守卫',
-    'Clear':'清空','No logs yet.':'暂无日志。','System and online update':'系统和在线更新','Node':'Node','Platform':'平台','Auth mode':'认证模式','yes':'是','no':'否','Update mode':'更新模式','core mineflayer deps':'核心 Mineflayer 依赖','all runtime deps':'全部运行时依赖','optional plugins':'可选插件','Registry':'镜像源','China mirror':'中国镜像','npm official':'npm 官方源','Check latest':'检查最新版本','Install update':'安装更新','No update logs.':'暂无更新日志。','Plugin manager':'插件管理','Installed':'已安装','Not installed':'未安装','Install':'安装','Update':'更新','Remove':'卸载','Feature':'功能','Floating controls':'悬浮视角','Open plugin manager':'打开插件管理','Install viewer dependency':'安装地图依赖','Floating viewer':'悬浮视角','Open floating viewer':'打开悬浮视角','Close floating viewer':'关闭悬浮视角','Reset floating viewer':'重置悬浮视角','Drag the title bar to move. Drag the corner to resize.':'拖动标题栏移动，拖动右下角调整大小。','Viewer is not ready yet.':'视角还未准备好。','Show inline viewer':'显示页面内视角','Hide inline viewer':'关闭页面内视角','Inline viewer paused to reduce lag. The floating viewer is still available.':'页面内视角已关闭以减少卡顿，仍可使用悬浮视角。','Viewer performance tip':'画面卡顿建议','Lower view distance to 3 or 4, then restart the bot.':'将视距调低到 3 或 4 后重启 Bot。','Enter admin password to continue.':'请输入管理员密码后继续。','Sign in to your Mineflayer control panel.':'登录 Mineflayer 控制面板。','Your local web console is protected by the administrator password generated at first launch.':'请输入首次启动时生成的管理员密码。','Remember to keep this window private on shared computers.':'请不要在公共或共享电脑上保存密码。','Admin password':'管理员密码','Sign in':'登录','Mineflayer Web Bot':'Mineflayer Web Bot','Multi bot management':'多 Bot 管理','Integrated viewer':'集成视角','Viewer':'视角','Online inventory':'在线背包','Project information':'项目信息','Official repository':'项目仓库','Open GitHub':'打开 GitHub','Project description':'基于 Mineflayer 的网页机器人管理面板，支持多 Bot 管理、视角、背包、聊天、默认插件增强和在线更新。','Release version':'发行版本','Runtime requirement':'运行要求','Node.js 22 or newer':'Node.js 22 或更高版本','Main features':'主要功能','Multi bot management, Microsoft login, AuthMe, integrated viewer proxy, online inventory, default plugin bundle, online dependency update.':'多 Bot 管理、Microsoft 登录、AuthMe、集成视角代理、在线背包、默认插件增强、在线依赖更新。','Stop goto':'停止前往坐标','Mouse sensitivity':'鼠标灵敏度','Auto mining':'自动挖矿','Mine blocks':'开始挖矿','Cut trees':'砍树','Block names hint':'留空默认挖矿物；可填多个方块名，用空格或逗号分隔。','Mouse capture active':'鼠标控制已启用','Hotbar':'快捷栏'
+    'Clear':'清空','No logs yet.':'暂无日志。','System and online update':'系统和在线更新','Node':'Node','Platform':'平台','Auth mode':'认证模式','yes':'是','no':'否','Update mode':'更新模式','core mineflayer deps':'核心 Mineflayer 依赖','all runtime deps':'全部运行时依赖','optional plugins':'可选插件','Registry':'镜像源','China mirror':'中国镜像','npm official':'npm 官方源','Check latest':'检查最新版本','Install update':'安装更新','No update logs.':'暂无更新日志。','Plugin manager':'插件管理','Installed':'已安装','Not installed':'未安装','Install':'安装','Update':'更新','Remove':'卸载','Feature':'功能','Floating controls':'悬浮视角','Open plugin manager':'打开插件管理','Install viewer dependency':'安装地图依赖','Floating viewer':'悬浮视角','Open floating viewer':'打开悬浮视角','Close floating viewer':'关闭悬浮视角','Reset floating viewer':'重置悬浮视角','Drag the title bar to move. Drag the corner to resize.':'拖动标题栏移动，拖动右下角调整大小。','Viewer is not ready yet.':'视角还未准备好。','Show inline viewer':'显示页面内视角','Hide inline viewer':'关闭页面内视角','Inline viewer paused to reduce lag. The floating viewer is still available.':'页面内视角已关闭以减少卡顿，仍可使用悬浮视角。','Viewer performance tip':'画面卡顿建议','Lower view distance to 3 or 4, then restart the bot.':'将视距调低到 3 或 4 后重启 Bot。','Enter admin password to continue.':'请输入管理员密码后继续。','Sign in to your Mineflayer control panel.':'登录 Mineflayer 控制面板。','Your local web console is protected by the administrator password generated at first launch.':'请输入首次启动时生成的管理员密码。','Remember to keep this window private on shared computers.':'请不要在公共或共享电脑上保存密码。','Admin password':'管理员密码','Sign in':'登录','Mineflayer Web Bot':'Mineflayer Web Bot','Multi bot management':'多 Bot 管理','Integrated viewer':'集成视角','Viewer':'视角','Online inventory':'在线背包','Project information':'项目信息','Official repository':'项目仓库','Open GitHub':'打开 GitHub','Project description':'基于 Mineflayer 的网页机器人管理面板，支持多 Bot 管理、视角、背包、聊天、默认插件增强和在线更新。','Release version':'发行版本','Runtime requirement':'运行要求','Node.js 22 or newer':'Node.js 22 或更高版本','Main features':'主要功能','Multi bot management, Microsoft login, AuthMe, integrated viewer proxy, online inventory, default plugin bundle, online dependency update.':'多 Bot 管理、Microsoft 登录、AuthMe、集成视角代理、在线背包、默认插件增强、在线依赖更新。','Stop goto':'停止前往坐标','Mouse sensitivity':'鼠标灵敏度','Auto mining':'自动挖矿','Mine blocks':'开始挖矿','Cut trees':'砍树','Block names hint':'留空默认挖矿物；可填多个方块名，用空格或逗号分隔。','Mouse capture active':'鼠标控制已启用','Hotbar':'快捷栏','Hold to keep clicking':'按住持续左键','Hold to keep using':'按住持续右键','Left hold':'持续左键','Right hold':'持续右键','Left interval click':'间隔左键','Right interval click':'间隔右键','Start left interval':'开始间隔左键','Stop left interval':'停止间隔左键','Start right interval':'开始间隔右键','Stop right interval':'停止间隔右键','Left tick ms':'左键间隔毫秒','Right tick ms':'右键间隔毫秒','Auto jump':'自动跳跃','Start auto jump':'开启自动跳跃','Stop auto jump':'关闭自动跳跃','Auto jump tick ms':'自动跳跃间隔毫秒','Single left click':'单次左键','Single right click':'单次右键'
   }
   const t = (s) => state.lang === 'zh' ? (zh[String(s)] || String(s)) : String(s)
   function applyLanguage () {
@@ -140,6 +140,9 @@
 
   async function run (label, fn) {
     try { const data = await fn(); toast(`${t(label)} OK`); await refresh(); return data } catch (err) { toast(`${t(label)} failed: ${err.message}`); throw err }
+  }
+  async function runQuiet (label, fn) {
+    try { const data = await fn(); toast(`${t(label)} OK`); return data } catch (err) { toast(`${t(label)} failed: ${err.message}`); throw err }
   }
   const post = (path, body = {}) => api(path, { method: 'POST', body: JSON.stringify(body) })
   const put = (path, body = {}) => api(path, { method: 'PUT', body: JSON.stringify(body) })
@@ -384,7 +387,7 @@
     const b = selected(); const p = b?.position || {}
     $('page-control').innerHTML = `<div class="opsGrid">
       <div class="card"><div class="cardHead"><h2>${t('Movement and combat')}</h2></div><div class="cardBody grid">
-        <div class="form four">${field('X','goto-x')}${field('Y','goto-y')}${field('Z','goto-z')}${field('Range','goto-range','1')}</div><div class="row"><button class="btn primary" id="gotoBtn">${t('Go to coordinate')}</button><button class="btn warn" id="stopGoto">${t('Stop goto')}</button><button class="btn" id="leftClick">${t('Left click')}</button><button class="btn" id="rightClick">${t('Right click')}</button></div>
+        <div class="form four">${field('X','goto-x')}${field('Y','goto-y')}${field('Z','goto-z')}${field('Range','goto-range','1')}</div><div class="row"><button class="btn primary" id="gotoBtn">${t('Go to coordinate')}</button><button class="btn warn" id="stopGoto">${t('Stop goto')}</button><button class="btn" id="singleLeftClick">${t('Single left click')}</button><button class="btn" id="singleRightClick">${t('Single right click')}</button></div><div class="form four">${field('Left tick ms','left-tick','360')}${field('Right tick ms','right-tick','700')}${field('Auto jump tick ms','auto-jump-tick','850')}<div class="field"><label>&nbsp;</label><div class="row"><button class="btn" id="leftClick" title="${t('Hold to keep clicking')}">${t('Left hold')}</button><button class="btn" id="rightClick" title="${t('Hold to keep using')}">${t('Right hold')}</button><button class="btn" id="leftIntervalStart">${t('Start left interval')}</button><button class="btn warn" id="leftIntervalStop">${t('Stop left interval')}</button><button class="btn" id="rightIntervalStart">${t('Start right interval')}</button><button class="btn warn" id="rightIntervalStop">${t('Stop right interval')}</button><button class="btn ${b?.autoJump?'primary':'ok'}" id="autoJumpToggle">${b?.autoJump?t('Stop auto jump'):t('Start auto jump')}</button></div></div></div>
         <div class="row">${['forward','back','left','right','jump','sprint','sneak'].map(c=>`<button class="btn" data-control="${c}">${t(c)}</button>`).join('')}<button class="btn ${state.keyboardCapture?'primary':'ok'}" id="keyboardCapture">${state.keyboardCapture?t('Stop keyboard capture'):t('Start keyboard capture')}</button><button class="btn warn" id="releaseControls">${t('Release all')}</button></div>
         <div class="hintBox compactHint keyboardFocusZone" tabindex="0"><b>${state.keyboardCapture?t('Keyboard capture active'):t('Keyboard capture')}</b><p>${t('Keyboard capture help')}</p><span>${state.keyboardCapture?t('Keyboard capture active'):''}</span></div>
         <div class="form four">${field('Player','player-name')}${field('Follow range','follow-range','2')}${field('Yaw','look-yaw')}${field('Pitch','look-pitch')}</div><div class="row"><button class="btn" id="follow">${t('Follow')}</button><button class="btn" id="lookPlayer">${t('Look at player')}</button><button class="btn" id="lookYawPitch">${t('Look yaw/pitch')}</button><button class="btn bad" id="attackNearest">${t('Attack nearest')}</button><button class="btn bad" id="attackPlayer">${t('Attack player')}</button></div>
@@ -398,16 +401,53 @@
     bindControl(); bindBlocks(); bindGuard(); if($('loadPlayersOps')) $('loadPlayersOps').onclick=loadPlayers; renderOpsPlayers(); applyLanguage(); if (state.keyboardCapture) setTimeout(focusKeyboardTarget, 0)
   }
   function idPath (suffix) { const id=botId(); if (!id) throw new Error(t('Select a bot first')); return `/api/bots/${encodeURIComponent(id)}${suffix}` }
+  function bindHoldButton (btn, endpoint, label) {
+    if (!btn) return
+    let held = false
+    let stopped = true
+    const start = ev => {
+      ev?.preventDefault?.()
+      if (held) return
+      held = true; stopped = false
+      btn.classList.add('primary')
+      const body = { state: true }
+      if (endpoint === '/left-hold') body.intervalMs = formValue('left-tick') || 360
+      if (endpoint === '/right-hold') body.intervalMs = formValue('right-tick') || 700
+      post(idPath(endpoint), body).catch(e => toast(e.message))
+    }
+    const stop = ev => {
+      ev?.preventDefault?.()
+      if (!held && stopped) return
+      held = false; stopped = true
+      btn.classList.remove('primary')
+      post(idPath(endpoint), { state: false }).catch(() => {})
+    }
+    btn.onmousedown = start
+    btn.onmouseup = stop
+    btn.onmouseleave = stop
+    btn.ontouchstart = start
+    btn.ontouchend = stop
+    btn.ontouchcancel = stop
+    btn.onclick = ev => { ev.preventDefault(); ev.stopPropagation() }
+  }
   function bindControl () {
-    $('gotoBtn').onclick = () => run('Goto', () => post(idPath('/goto'), { x:formValue('goto-x'), y:formValue('goto-y'), z:formValue('goto-z'), range:formValue('goto-range') }))
-    if ($('stopGoto')) $('stopGoto').onclick = () => run('Stop goto', () => post(idPath('/stop-task')))
-    $('leftClick').onclick = () => run('Left click', () => post(idPath('/left-click'))); $('rightClick').onclick = () => run('Right click', () => post(idPath('/right-click')))
+    $('gotoBtn').onclick = () => runQuiet('Goto', () => post(idPath('/goto'), { x:formValue('goto-x'), y:formValue('goto-y'), z:formValue('goto-z'), range:formValue('goto-range') }))
+    if ($('stopGoto')) $('stopGoto').onclick = () => runQuiet('Stop goto', () => post(idPath('/stop-task')))
+    if ($('singleLeftClick')) $('singleLeftClick').onclick = () => runQuiet('Single left click', () => post(idPath('/left-click')))
+    if ($('singleRightClick')) $('singleRightClick').onclick = () => runQuiet('Single right click', () => post(idPath('/right-click')))
+    if ($('leftIntervalStart')) $('leftIntervalStart').onclick = () => runQuiet('Start left interval', () => post(idPath('/left-hold'), { state:true, intervalMs: formValue('left-tick') || 360 }))
+    if ($('leftIntervalStop')) $('leftIntervalStop').onclick = () => runQuiet('Stop left interval', () => post(idPath('/left-hold'), { state:false }))
+    if ($('rightIntervalStart')) $('rightIntervalStart').onclick = () => runQuiet('Start right interval', () => post(idPath('/right-hold'), { state:true, intervalMs: formValue('right-tick') || 700 }))
+    if ($('rightIntervalStop')) $('rightIntervalStop').onclick = () => runQuiet('Stop right interval', () => post(idPath('/right-hold'), { state:false }))
+    if ($('autoJumpToggle')) $('autoJumpToggle').onclick = () => runQuiet('Auto jump', () => post(idPath('/auto-jump'), { state: !(selected()?.autoJump), intervalMs: formValue('auto-jump-tick') || 850 })).then(()=>refresh())
+    bindHoldButton($('leftClick'), '/left-hold', 'Left click')
+    bindHoldButton($('rightClick'), '/right-hold', 'Right click')
     document.querySelectorAll('[data-control]').forEach(btn => { btn.onmousedown=()=>post(idPath('/control'),{control:btn.dataset.control,state:true}).catch(e=>toast(e.message)); btn.onmouseup=btn.onmouseleave=()=>post(idPath('/control'),{control:btn.dataset.control,state:false}).catch(()=>{}) })
     $('releaseControls').onclick = () => releaseAllControls().then(()=>toast('Released'))
     if ($('keyboardCapture')) $('keyboardCapture').onclick = toggleKeyboardCapture
-    $('follow').onclick=()=>run('Follow',()=>post(idPath('/follow'),{username:formValue('player-name'),range:formValue('follow-range')})); $('lookPlayer').onclick=()=>run('Look player',()=>post(idPath('/look-at-player'),{username:formValue('player-name')})); $('lookYawPitch').onclick=()=>run('Look',()=>post(idPath('/look'),{yaw:formValue('look-yaw'),pitch:formValue('look-pitch')}))
-    $('attackNearest').onclick=()=>run('Attack nearest',()=>post(idPath('/attack'),{})); $('attackPlayer').onclick=()=>run('Attack player',()=>post(idPath('/attack'),{username:formValue('player-name')}))
-    $('mount').onclick=()=>run('Mount',()=>post(idPath('/mount'),{})); $('dismount').onclick=()=>run('Dismount',()=>post(idPath('/dismount'))); $('sendChat').onclick=()=>run('Chat',()=>post(idPath('/chat'),{message:formValue('chatText')}))
+    $('follow').onclick=()=>runQuiet('Follow',()=>post(idPath('/follow'),{username:formValue('player-name'),range:formValue('follow-range')})); $('lookPlayer').onclick=()=>runQuiet('Look player',()=>post(idPath('/look-at-player'),{username:formValue('player-name')})); $('lookYawPitch').onclick=()=>runQuiet('Look',()=>post(idPath('/look'),{yaw:formValue('look-yaw'),pitch:formValue('look-pitch')}))
+    $('attackNearest').onclick=()=>runQuiet('Attack nearest',()=>post(idPath('/attack'),{})); $('attackPlayer').onclick=()=>runQuiet('Attack player',()=>post(idPath('/attack'),{username:formValue('player-name')}))
+    $('mount').onclick=()=>runQuiet('Mount',()=>post(idPath('/mount'),{})); $('dismount').onclick=()=>runQuiet('Dismount',()=>post(idPath('/dismount'))); $('sendChat').onclick=()=>runQuiet('Chat',()=>post(idPath('/chat'),{message:formValue('chatText')}))
   }
 
 
@@ -421,6 +461,7 @@
     setTimeout(focusKeyboardTarget, 0)
     setTimeout(focusKeyboardTarget, 80)
     setTimeout(focusKeyboardTarget, 250)
+    if (state.keyboardCapture && !window.__keyboardFocusTimer) { window.__keyboardFocusTimer = setInterval(() => { if (state.keyboardCapture) focusKeyboardTarget(); else { clearInterval(window.__keyboardFocusTimer); window.__keyboardFocusTimer = null } }, 500) }
   }
   function focusKeyboardTarget () {
     try {
@@ -448,6 +489,12 @@
       el.addEventListener('mousedown', ev => { ev.preventDefault(); focusKeyboardTarget(); try { el.requestPointerLock?.() } catch {} })
       el.addEventListener('click', ev => { ev.preventDefault(); focusKeyboardTarget() }, true)
       document.body.appendChild(el)
+      const trap = document.getElementById('keyboardInputTrap')
+      if (trap) {
+        trap.addEventListener('blur', () => { if (state.keyboardCapture) setTimeout(focusKeyboardTarget, 0) })
+        trap.addEventListener('keydown', ev => window.dispatchEvent(new KeyboardEvent('keydown', { key: ev.key, code: ev.code, ctrlKey: ev.ctrlKey, shiftKey: ev.shiftKey, altKey: ev.altKey, bubbles: true, cancelable: true })), true)
+        trap.addEventListener('keyup', ev => window.dispatchEvent(new KeyboardEvent('keyup', { key: ev.key, code: ev.code, ctrlKey: ev.ctrlKey, shiftKey: ev.shiftKey, altKey: ev.altKey, bubbles: true, cancelable: true })), true)
+      }
       const exit = document.getElementById('keyboardGlobalExit')
       if (exit) exit.onclick = ev => { ev.preventDefault(); ev.stopPropagation(); state.keyboardCapture = false; try { document.exitPointerLock?.() } catch {}; releaseAllControls(); renderControl(); if (state.tab === 'map') renderMap(); renderFloatPanel(); updateKeyboardLayer() }
     }
@@ -509,9 +556,23 @@
       if (document.pointerLockElement !== document.getElementById('keyboardGlobalCatcher')) {
         try { document.getElementById('keyboardGlobalCatcher')?.requestPointerLock?.() } catch {}
       }
-      if (ev.button === 0) post(idPath('/left-click')).catch(e=>toast(e.message))
-      if (ev.button === 2) post(idPath('/right-click')).catch(e=>toast(e.message))
+      if (ev.button === 0) post(idPath('/left-hold'), { state: true }).catch(e=>toast(e.message))
+      if (ev.button === 2) post(idPath('/right-hold'), { state: true }).catch(e=>toast(e.message))
     }, true)
+    window.addEventListener('pointerdown', ev => {
+      if (!state.keyboardCapture) return
+      if (ev.target && ev.target.closest && ev.target.closest('#keyboardGlobalExit,.keyboardGlobalPanel button')) return
+      ev.preventDefault(); ev.stopPropagation(); if (ev.stopImmediatePropagation) ev.stopImmediatePropagation()
+      focusKeyboardTarget()
+    }, true)
+    window.addEventListener('mouseup', ev => {
+      if (!state.keyboardCapture) return
+      if (ev.button === 0 || ev.button === 2) {
+        ev.preventDefault(); ev.stopPropagation(); if (ev.stopImmediatePropagation) ev.stopImmediatePropagation()
+        post(idPath(ev.button === 0 ? '/left-hold' : '/right-hold'), { state: false }).catch(()=>{})
+      }
+    }, true)
+    window.addEventListener('blur', () => { if (state.keyboardCapture) { post(idPath('/left-hold'), { state: false }).catch(()=>{}); post(idPath('/right-hold'), { state: false }).catch(()=>{}); releaseAllControls() } })
     window.addEventListener('mousemove', ev => {
       if (!state.keyboardCapture) return
       const dx = ev.movementX || 0, dy = ev.movementY || 0
@@ -589,7 +650,7 @@
   function bindBlocks () {
     const coords = () => ({x:formValue('block-x'),y:formValue('block-y'),z:formValue('block-z')})
     if (!$('digCursor')) return
-    $('digCursor').onclick=()=>run('Dig cursor',()=>post(idPath('/dig-cursor'))); $('digCoord').onclick=()=>run('Dig coordinate',()=>post(idPath('/dig-block'),coords())); $('digNearest').onclick=()=>run('Dig nearest',()=>post(idPath('/dig-nearest'),{name:formValue('block-name')})); $('collectBlock').onclick=()=>run('Collect block',()=>post(idPath('/collect-block'),{name:formValue('block-name')})); if($('autoMine')) $('autoMine').onclick=()=>run('Auto mine',()=>post(idPath('/auto-mine'),{names:formValue('mine-names'),maxDistance:formValue('mine-range'),count:formValue('mine-count')})); if($('cutTrees')) $('cutTrees').onclick=()=>run('Cut trees',()=>post(idPath('/cut-trees'),{names:formValue('mine-names'),maxDistance:formValue('mine-range'),count:formValue('mine-count')}))
+    $('digCursor').onclick=()=>runQuiet('Dig cursor',()=>post(idPath('/dig-cursor'))); $('digCoord').onclick=()=>runQuiet('Dig coordinate',()=>post(idPath('/dig-block'),coords())); $('digNearest').onclick=()=>runQuiet('Dig nearest',()=>post(idPath('/dig-nearest'),{name:formValue('block-name')})); $('collectBlock').onclick=()=>runQuiet('Collect block',()=>post(idPath('/collect-block'),{name:formValue('block-name')})); if($('autoMine')) $('autoMine').onclick=()=>runQuiet('Auto mine',()=>post(idPath('/auto-mine'),{names:formValue('mine-names'),maxDistance:formValue('mine-range'),count:formValue('mine-count')})); if($('cutTrees')) $('cutTrees').onclick=()=>runQuiet('Cut trees',()=>post(idPath('/cut-trees'),{names:formValue('mine-names'),maxDistance:formValue('mine-range'),count:formValue('mine-count')}))
     $('openWindow').onclick=async()=>{ const d=await run('Open window',()=>post(idPath('/window/open'),coords())); state.win=d.window; renderWindow() }; $('refreshWindow').onclick=async()=>{ const d=await api(idPath('/window')); state.win=d.window; renderWindow() }; $('closeWindow').onclick=()=>run('Close window',()=>post(idPath('/window/close')))
     const itemBody=()=>({name:formValue('item-name'),count:formValue('item-count'),slot:formValue('slot'),mouseButton:formValue('mouse-button')})
     $('withdraw').onclick=async()=>{const d=await run('Withdraw',()=>post(idPath('/window/withdraw'),itemBody()));state.win=d.window;renderWindow()}; $('deposit').onclick=async()=>{const d=await run('Deposit',()=>post(idPath('/window/deposit'),itemBody()));state.win=d.window;renderWindow()}; $('clickSlot').onclick=async()=>{const d=await run('Click slot',()=>post(idPath('/window/click-slot'),itemBody()));state.win=d.window;renderWindow()}
@@ -598,7 +659,7 @@
   }
   function bindGuard () {
     if (!$('startGuard')) return
-    $('startGuard').onclick=()=>run('Start guard',()=>post(idPath('/guard/start'),{x:formValue('guard-x'),y:formValue('guard-y'),z:formValue('guard-z'),radius:formValue('guard-radius'),mode:formValue('guard-mode'),returnHome:formBool('guard-return'),intervalMs:formValue('guard-interval')})); $('stopGuard').onclick=()=>run('Stop guard',()=>post(idPath('/guard/stop')))
+    $('startGuard').onclick=()=>runQuiet('Start guard',()=>post(idPath('/guard/start'),{x:formValue('guard-x'),y:formValue('guard-y'),z:formValue('guard-z'),radius:formValue('guard-radius'),mode:formValue('guard-mode'),returnHome:formBool('guard-return'),intervalMs:formValue('guard-interval')})); $('stopGuard').onclick=()=>runQuiet('Stop guard',()=>post(idPath('/guard/stop')))
   }
   function renderOpsPlayers () {
     const el = $('playersOps')
@@ -610,7 +671,7 @@
     if (!$('page-blocks')) return
     $('page-blocks').innerHTML = `<div class="card"><div class="cardHead"><h2>Blocks and windows</h2></div><div class="cardBody grid"><div class="form four">${field('X','block-x')}${field('Y','block-y')}${field('Z','block-z')}${field('Block name','block-name')}</div><div class="row"><button class="btn" id="digCursor">Dig cursor block</button><button class="btn" id="digCoord">Dig coordinate</button><button class="btn" id="digNearest">Dig nearest named block</button><button class="btn" id="collectBlock">Collect block</button><button class="btn primary" id="openWindow">Open block GUI</button><button class="btn" id="refreshWindow">Refresh window</button><button class="btn warn" id="closeWindow">Close window</button></div><div class="form four">${field('Item name','item-name')}${field('Count','item-count','1')}${field('Slot','slot')}${field('Mouse button','mouse-button','0')}</div><div class="row"><button class="btn" id="withdraw">Withdraw</button><button class="btn" id="deposit">Deposit</button><button class="btn" id="clickSlot">Click slot</button><button class="btn" id="furnaceInput">Furnace input</button><button class="btn" id="furnaceFuel">Furnace fuel</button><button class="btn" id="furnaceTake">Take output</button></div><div id="windowView" class="items"></div></div></div>`
     const coords = () => ({x:formValue('block-x'),y:formValue('block-y'),z:formValue('block-z')})
-    $('digCursor').onclick=()=>run('Dig cursor',()=>post(idPath('/dig-cursor'))); $('digCoord').onclick=()=>run('Dig coordinate',()=>post(idPath('/dig-block'),coords())); $('digNearest').onclick=()=>run('Dig nearest',()=>post(idPath('/dig-nearest'),{name:formValue('block-name')})); $('collectBlock').onclick=()=>run('Collect block',()=>post(idPath('/collect-block'),{name:formValue('block-name')})); if($('autoMine')) $('autoMine').onclick=()=>run('Auto mine',()=>post(idPath('/auto-mine'),{names:formValue('mine-names'),maxDistance:formValue('mine-range'),count:formValue('mine-count')})); if($('cutTrees')) $('cutTrees').onclick=()=>run('Cut trees',()=>post(idPath('/cut-trees'),{names:formValue('mine-names'),maxDistance:formValue('mine-range'),count:formValue('mine-count')}))
+    $('digCursor').onclick=()=>runQuiet('Dig cursor',()=>post(idPath('/dig-cursor'))); $('digCoord').onclick=()=>runQuiet('Dig coordinate',()=>post(idPath('/dig-block'),coords())); $('digNearest').onclick=()=>runQuiet('Dig nearest',()=>post(idPath('/dig-nearest'),{name:formValue('block-name')})); $('collectBlock').onclick=()=>runQuiet('Collect block',()=>post(idPath('/collect-block'),{name:formValue('block-name')})); if($('autoMine')) $('autoMine').onclick=()=>runQuiet('Auto mine',()=>post(idPath('/auto-mine'),{names:formValue('mine-names'),maxDistance:formValue('mine-range'),count:formValue('mine-count')})); if($('cutTrees')) $('cutTrees').onclick=()=>runQuiet('Cut trees',()=>post(idPath('/cut-trees'),{names:formValue('mine-names'),maxDistance:formValue('mine-range'),count:formValue('mine-count')}))
     $('openWindow').onclick=async()=>{ const d=await run('Open window',()=>post(idPath('/window/open'),coords())); state.win=d.window; renderWindow() }; $('refreshWindow').onclick=async()=>{ const d=await api(idPath('/window')); state.win=d.window; renderWindow() }; $('closeWindow').onclick=()=>run('Close window',()=>post(idPath('/window/close')))
     const itemBody=()=>({name:formValue('item-name'),count:formValue('item-count'),slot:formValue('slot'),mouseButton:formValue('mouse-button')})
     $('withdraw').onclick=async()=>{const d=await run('Withdraw',()=>post(idPath('/window/withdraw'),itemBody()));state.win=d.window;renderWindow()}; $('deposit').onclick=async()=>{const d=await run('Deposit',()=>post(idPath('/window/deposit'),itemBody()));state.win=d.window;renderWindow()}; $('clickSlot').onclick=async()=>{const d=await run('Click slot',()=>post(idPath('/window/click-slot'),itemBody()));state.win=d.window;renderWindow()}
@@ -639,7 +700,7 @@
   function invItemCard (it){ return `<div class="item"><b>${it.empty?t('Empty'):esc(it.displayName||it.name||'item')}</b><span>${t('slot')} ${esc(it.slot)}${it.count?` · x${esc(it.count)}`:''}${it.name?` · ${esc(it.name)}`:''}</span>${it.empty?'':`<div class="row"><button class="btn small" data-equip-slot="${esc(it.slot)}">${t('Use in hand')}</button><button class="btn small bad" data-drop-slot="${esc(it.slot)}">${t('Drop item')}</button></div>`}</div>` }
   function hotbarSlot(it, i){ const selected = it.selected ? 'selected' : ''; return `<div class="hotbarSlot ${selected}">${it.empty?'<span></span>':`<b>${esc(it.displayName||it.name||'')}</b>${it.count?`<em>${esc(it.count)}</em>`:''}`}</div>` }
   document.addEventListener('click', ev => { const equip=ev.target.closest('[data-equip-slot]'); const drop=ev.target.closest('[data-drop-slot]'); if(equip) run('Use in hand',()=>post(idPath('/equip'),{slot:equip.dataset.equipSlot})); if(drop && confirm(t('Drop item')+'?')) run('Drop item',()=>post(idPath('/drop'),{slot:drop.dataset.dropSlot})) })
-  window.__actPlayer=(type,name)=> type==='follow'?run('Follow player',()=>post(idPath('/follow'),{username:name,range:2})):run('Attack player',()=>post(idPath('/attack'),{username:name}))
+  window.__actPlayer=(type,name)=> type==='follow'?run('Follow player',()=>post(idPath('/follow'),{username:name,range:2})):runQuiet('Attack player',()=>post(idPath('/attack'),{username:name}))
   function itemCard (it){ return `<div class="item"><b>${it.empty?t('Empty'):esc(it.displayName||it.name||'item')}</b><span>${t('slot')} ${esc(it.slot)}${it.count?` · x${esc(it.count)}`:''}${it.name?` · ${esc(it.name)}`:''}</span></div>` }
 
   function chatLogs () { return state.logs.filter(l => l.level === 'chat' || String(l.message||'').startsWith('<')) }
@@ -750,7 +811,7 @@
   }
 
   function renderGuard(){ if (!$('page-guard')) return; const b=selected(); const p=b?.position||{}; $('page-guard').innerHTML=`<div class="card"><div class="cardHead"><h2>Guard area</h2><span class="tag ${b?.guard?.enabled?'online':''}">${b?.guard?.enabled?'guarding':'stopped'}</span></div><div class="cardBody grid"><div class="form four">${field('Center X','guard-x',num(p.x))}${field('Center Y','guard-y',num(p.y))}${field('Center Z','guard-z',num(p.z))}${field('Radius','guard-radius','16')}</div><div class="form four"><div class="field"><label>Mode</label><select id="guard-mode"><option value="hostile">hostile mobs</option><option value="players">players</option><option value="all">all mobs/players</option></select></div>${field('Interval ms','guard-interval','1000')}<label class="check"><input id="guard-return" type="checkbox" checked> Return home</label></div><div class="row"><button class="btn primary" id="startGuard">Start guard</button><button class="btn warn" id="stopGuard">Stop guard</button></div></div></div>`
-    $('startGuard').onclick=()=>run('Start guard',()=>post(idPath('/guard/start'),{x:formValue('guard-x'),y:formValue('guard-y'),z:formValue('guard-z'),radius:formValue('guard-radius'),mode:formValue('guard-mode'),returnHome:formBool('guard-return'),intervalMs:formValue('guard-interval')})); $('stopGuard').onclick=()=>run('Stop guard',()=>post(idPath('/guard/stop')))
+    $('startGuard').onclick=()=>runQuiet('Start guard',()=>post(idPath('/guard/start'),{x:formValue('guard-x'),y:formValue('guard-y'),z:formValue('guard-z'),radius:formValue('guard-radius'),mode:formValue('guard-mode'),returnHome:formBool('guard-return'),intervalMs:formValue('guard-interval')})); $('stopGuard').onclick=()=>runQuiet('Stop guard',()=>post(idPath('/guard/stop')))
   }
 
   function renderLogsOnly(){ const el=$('page-logs'); if(!el)return; el.innerHTML=`<div class="card"><div class="cardHead"><h2>Logs</h2><button class="btn" id="clearLogs">Clear</button></div><div class="cardBody"><div class="logBox" id="logBoxInner">${state.logs.map(l=>`<div class="logLine log-${esc(l.level)}">[${esc(l.time)}] [${esc(l.id)}] [${esc(l.level)}] ${esc(l.message)}</div>`).join('') || '<p class="muted">No logs yet.</p>'}</div></div></div>`; if($('clearLogs')) $('clearLogs').onclick=()=>{state.logs=[];renderLogsOnly()}; applyLanguage() }

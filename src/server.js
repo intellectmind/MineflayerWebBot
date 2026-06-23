@@ -238,6 +238,9 @@ app.post('/api/bots/:id/look-at-player', requireAuth, asyncRoute(async (req, res
 app.post('/api/bots/:id/attack', requireAuth, asyncRoute(async (req, res) => okBot(res, await managed(req).attack(req.body || {}))))
 app.post('/api/bots/:id/left-click', requireAuth, asyncRoute(async (req, res) => okBot(res, await managed(req).leftClick())))
 app.post('/api/bots/:id/right-click', requireAuth, asyncRoute(async (req, res) => okBot(res, await managed(req).rightClick())))
+app.post('/api/bots/:id/left-hold', requireAuth, asyncRoute(async (req, res) => okBot(res, req.body?.state === false ? managed(req).stopLeftHold() : managed(req).startLeftHold(req.body || {}))))
+app.post('/api/bots/:id/right-hold', requireAuth, asyncRoute(async (req, res) => okBot(res, req.body?.state === false ? managed(req).stopRightHold() : managed(req).startRightHold(req.body || {}))))
+app.post('/api/bots/:id/auto-jump', requireAuth, asyncRoute(async (req, res) => okBot(res, managed(req).setAutoJump(Boolean(req.body?.state), req.body || {}))))
 app.post('/api/bots/:id/equip', requireAuth, asyncRoute(async (req, res) => okBot(res, await managed(req).equipItem(req.body || {}))))
 app.post('/api/bots/:id/drop', requireAuth, asyncRoute(async (req, res) => okBot(res, await managed(req).dropItem(req.body || {}))))
 

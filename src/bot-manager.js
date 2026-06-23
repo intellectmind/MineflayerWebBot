@@ -73,6 +73,14 @@ class ManagedBot extends EventEmitter {
     this.microsoftLogin = null
     this.pathRecoveryTimer = null
     this.activePathTask = null
+    this.leftHoldTimer = null
+    this.rightHoldTimer = null
+    this.guardTargetId = null
+    this.guardLastCommandAt = 0
+    this.guardLastAttackAt = 0
+    this.autoJumpTimer = null
+    this.combatTargetId = null
+    this.combatLastCommandAt = 0
   }
 
   safeFileName (value) {
@@ -229,7 +237,7 @@ class ManagedBot extends EventEmitter {
     })
 
     bot.on('path_update', (result) => {
-      if (result?.status && result.status !== 'partial') this.log('debug', `path ${result.status}`)
+      if (result?.status && !['partial', 'success'].includes(result.status)) this.log('debug', `path ${result.status}`)
       if (['noPath', 'timeout'].includes(result?.status) && this.activePathTask) {
         this.log('warn', `pathfinder ${result.status}, waiting for recovery/replan`)
       }
@@ -289,6 +297,9 @@ class ManagedBot extends EventEmitter {
     this.currentContainer = null
     this.currentFurnace = null
     this.currentWindowLabel = null
+    this.stopLeftHold({ silent: true })
+    this.stopRightHold({ silent: true })
+    this.stopAutoJump({ silent: true })
   }
 
   stop () {
@@ -576,6 +587,10 @@ class ManagedBot extends EventEmitter {
   stopTask () {
     const bot = this.ensureOnline()
     this.stopPathRecovery()
+    this.stopLeftHold({ silent: true })
+    this.stopRightHold({ silent: true })
+    this.stopAutoJump({ silent: true })
+    this.guardTargetId = null
     bot.pathfinder?.stop?.()
     if (bot.pvp?.stop) bot.pvp.stop()
     for (const control of ['forward', 'back', 'left', 'right', 'jump', 'sprint', 'sneak']) bot.setControlState(control, false)
@@ -646,6 +661,37 @@ class ManagedBot extends EventEmitter {
     return this.snapshot()
   }
 
+
+  async chaseAndAttackEntity (entity, { label = 'combat', range = 2.8, attackDistance = 3.1, throttleMs = 2600, dynamic = true } = {}) {
+    const bot = this.ensureOnline()
+    if (!entity || !entity.position) throw new Error('No target entity found')
+    const targetId = entity.id || entity.uuid || entity.username || entity.name || 'target'
+    const now = Date.now()
+    const dist = entity.position.distanceTo(bot.entity.position)
+    if (dist > attackDistance) {
+      // Use pathfinder for chasing, but do not reset the goal every tick. Repeated goal resets were the
+      // main reason for jitter, failed detours and iframe/control refresh side effects in the web UI.
+      if (this.combatTargetId !== targetId || now - this.combatLastCommandAt > throttleMs) {
+        if (this.defaultMovements) bot.pathfinder.setMovements(this.defaultMovements)
+        if (GoalFollow) {
+          bot.pathfinder.setGoal(new GoalFollow(entity, Math.max(1, Number(range) || 2)), Boolean(dynamic))
+          this.startPathRecovery(label, () => entity.isValid !== false ? new GoalFollow(entity, Math.max(1, Number(range) || 2)) : null, Boolean(dynamic))
+        } else {
+          bot.pathfinder.setGoal(new GoalNear(entity.position.x, entity.position.y, entity.position.z, Math.max(1, Number(range) || 2)))
+          this.startPathRecovery(label, () => entity.isValid !== false ? new GoalNear(entity.position.x, entity.position.y, entity.position.z, Math.max(1, Number(range) || 2)) : null, Boolean(dynamic))
+        }
+        this.combatTargetId = targetId
+        this.combatLastCommandAt = now
+        this.log('debug', `${label} chasing ${entity.username || entity.name || entity.type}`)
+      }
+      return false
+    }
+    this.stopPathRecovery()
+    try { bot.pathfinder?.stop?.() } catch {}
+    await this.attackEntity(entity)
+    return true
+  }
+
   async attack ({ mode = 'nearest', username, maxDistance = 4, hostileOnly = false } = {}) {
     const bot = this.ensureOnline()
     let entity = null
@@ -658,7 +704,9 @@ class ManagedBot extends EventEmitter {
       entity = bot.nearestEntity(e => this.isAttackable(e, maxDist, hostileOnly))
     }
     if (!entity) throw new Error('No target entity found')
-    await this.attackEntity(entity)
+    const dist = entity.position?.distanceTo?.(bot.entity.position) ?? 0
+    if (dist > 3.2) await this.chaseAndAttackEntity(entity, { label: 'attack', range: 2, attackDistance: 3.2, throttleMs: 1800 })
+    else await this.attackEntity(entity)
     return this.snapshot()
   }
 
@@ -678,44 +726,126 @@ class ManagedBot extends EventEmitter {
     this.log('info', `attack ${entity.username || entity.name || entity.type}`)
   }
 
+  getBlockAtCursor (maxDistance = 8) {
+    const bot = this.ensureOnline()
+    if (typeof bot.blockAtCursor !== 'function') return null
+    const tries = [Number(maxDistance) || 8, 10, 12]
+    for (const d of tries) {
+      try {
+        const block = bot.blockAtCursor(d)
+        if (block && block.name !== 'air') return block
+      } catch {}
+    }
+    return null
+  }
+
   async leftClick () {
     const bot = this.ensureOnline()
-    const entity = typeof bot.entityAtCursor === 'function' ? bot.entityAtCursor(4.5) : null
+    const entity = typeof bot.entityAtCursor === 'function' ? bot.entityAtCursor(5.5) : null
     if (entity) {
       await this.attackEntity(entity)
       return this.snapshot()
     }
     bot.swingArm('right')
-    this.log('info', 'left click swing')
+    this.log('debug', 'left click swing')
+    return this.snapshot()
+  }
+
+  startLeftHold ({ intervalMs = 360 } = {}) {
+    this.ensureOnline()
+    if (this.leftHoldTimer) return this.snapshot()
+    const run = () => this.leftClick().catch(err => this.log('debug', `left hold skipped: ${err.message}`))
+    run()
+    this.leftHoldTimer = setInterval(run, Math.max(160, Number(intervalMs) || 360))
+    this.leftHoldTimer.unref?.()
+    this.log('debug', 'left hold started')
+    return this.snapshot()
+  }
+
+  stopLeftHold ({ silent = false } = {}) {
+    if (this.leftHoldTimer) clearInterval(this.leftHoldTimer)
+    this.leftHoldTimer = null
+    if (!silent) this.log('debug', 'left hold stopped')
     return this.snapshot()
   }
 
   async rightClick () {
     const bot = this.ensureOnline()
-    const entity = typeof bot.entityAtCursor === 'function' ? bot.entityAtCursor(4.5) : null
+    const entity = typeof bot.entityAtCursor === 'function' ? bot.entityAtCursor(5.5) : null
     if (entity) {
       await bot.lookAt(entity.position.offset(0, entity.height || 1, 0), true)
       await bot.activateEntity(entity)
-      this.log('info', `right click entity ${entity.username || entity.name || entity.type}`)
+      this.log('debug', `right click entity ${entity.username || entity.name || entity.type}`)
       return this.snapshot()
     }
-    const block = typeof bot.blockAtCursor === 'function' ? bot.blockAtCursor(5) : null
+    const block = this.getBlockAtCursor(8)
     if (block) {
       await bot.activateBlock(block)
-      this.log('info', `right click block ${block.name}`)
+      this.log('debug', `right click block ${block.name}`)
       return this.snapshot()
     }
     bot.activateItem()
     await sleep(100)
     bot.deactivateItem?.()
-    this.log('info', 'right click item')
+    this.log('debug', 'right click item')
     return this.snapshot()
   }
 
-  async digCursorBlock () {
+  startRightHold ({ intervalMs = 700 } = {}) {
     const bot = this.ensureOnline()
-    const block = typeof bot.blockAtCursor === 'function' ? bot.blockAtCursor(5) : null
-    if (!block) throw new Error('No block at cursor')
+    if (this.rightHoldTimer) return this.snapshot()
+    try { bot.activateItem() } catch {}
+    const delay = Math.max(120, Number(intervalMs) || 700)
+    this.rightHoldTimer = setInterval(() => {
+      try { this.bot?.activateItem?.() } catch (err) { this.log('debug', `right hold skipped: ${err.message}`) }
+    }, delay)
+    this.rightHoldTimer.unref?.()
+    this.log('debug', 'right hold started')
+    return this.snapshot()
+  }
+
+  stopRightHold ({ silent = false } = {}) {
+    if (this.rightHoldTimer) clearInterval(this.rightHoldTimer)
+    this.rightHoldTimer = null
+    try { this.bot?.deactivateItem?.() } catch {}
+    if (!silent) this.log('debug', 'right hold stopped')
+    return this.snapshot()
+  }
+
+
+  startAutoJump ({ intervalMs = 850 } = {}) {
+    const bot = this.ensureOnline()
+    if (this.autoJumpTimer) return this.snapshot()
+    const delay = Math.max(250, Number(intervalMs) || 850)
+    const jumpOnce = () => {
+      try {
+        if (!this.bot) return
+        this.bot.setControlState('jump', true)
+        setTimeout(() => { try { this.bot?.setControlState('jump', false) } catch {} }, 160).unref?.()
+      } catch (err) { this.log('debug', `auto jump skipped: ${err.message}`) }
+    }
+    jumpOnce()
+    this.autoJumpTimer = setInterval(jumpOnce, delay)
+    this.autoJumpTimer.unref?.()
+    this.log('info', `auto jump started interval=${delay}ms`)
+    return this.snapshot()
+  }
+
+  stopAutoJump ({ silent = false } = {}) {
+    if (this.autoJumpTimer) clearInterval(this.autoJumpTimer)
+    this.autoJumpTimer = null
+    try { this.bot?.setControlState?.('jump', false) } catch {}
+    if (!silent) this.log('info', 'auto jump stopped')
+    return this.snapshot()
+  }
+
+  setAutoJump (state, options = {}) {
+    return state ? this.startAutoJump(options) : this.stopAutoJump(options)
+  }
+
+  async digCursorBlock () {
+    const block = this.getBlockAtCursor(10)
+    if (!block) throw new Error('No block at cursor. Turn the bot view toward a nearby block first, or use coordinate dig.')
     await this.digBlockObject(block)
     return this.snapshot()
   }
@@ -1078,26 +1208,60 @@ class ManagedBot extends EventEmitter {
     const center = this.guard.center
     const radius = Number(this.guard.radius) || 16
     const target = bot.nearestEntity(e => {
-      if (!e || e === bot.entity) return false
+      if (!e || e === bot.entity || e.isValid === false) return false
       if (e.position.distanceTo(center) > radius) return false
-      if (e.position.distanceTo(bot.entity.position) > Math.max(24, radius + 4)) return false
+      if (e.position.distanceTo(bot.entity.position) > Math.max(36, radius + 10)) return false
       if (this.guard.mode === 'all') return e.type === 'mob' || e.type === 'player'
       if (this.guard.mode === 'players') return e.type === 'player'
       return HOSTILE_MOBS.has(e.name)
     })
+    const now = Date.now()
     if (target) {
-      if (target.position.distanceTo(bot.entity.position) > 4) await this.goto(target.position.x, target.position.y, target.position.z, 2)
-      await this.attackEntity(target)
+      const targetId = target.id || target.uuid || target.username || target.name
+      const dist = target.position.distanceTo(bot.entity.position)
+      // Do not call pvp.attack/goto every guard tick. Repeating those calls makes the bot stutter and
+      // can prevent mineflayer-pathfinder from finishing detours around fences/walls.
+      if (dist > 3.2) {
+        if (this.guardTargetId !== targetId || now - this.guardLastCommandAt > 3500) {
+          if (this.defaultMovements) bot.pathfinder.setMovements(this.defaultMovements)
+          if (GoalFollow) {
+            bot.pathfinder.setGoal(new GoalFollow(target, 2.5), true)
+            this.startPathRecovery('guard follow', () => target.isValid !== false ? new GoalFollow(target, 2.5) : null, true)
+          } else {
+            bot.pathfinder.setGoal(new GoalNear(target.position.x, target.position.y, target.position.z, 2))
+            this.startPathRecovery('guard follow', () => target.isValid !== false ? new GoalNear(target.position.x, target.position.y, target.position.z, 2) : null, true)
+          }
+          this.guardTargetId = targetId
+          this.guardLastCommandAt = now
+          this.log('debug', `guard chasing ${target.username || target.name || target.type}`)
+        }
+      } else if (now - this.guardLastAttackAt > 850) {
+        this.guardLastAttackAt = now
+        try { bot.pathfinder?.stop?.() } catch {}
+        this.stopPathRecovery()
+        if (bot.pvp?.attack) bot.pvp.attack(target)
+        else await this.attackEntity(target)
+        this.log('info', `guard attack ${target.username || target.name || target.type}`)
+      }
       return
     }
+    this.guardTargetId = null
+    if (bot.pvp?.stop) bot.pvp.stop()
     if (this.guard.returnHome && bot.entity.position.distanceTo(center) > 3) {
-      bot.pathfinder.setGoal(new GoalNear(center.x, center.y, center.z, 2))
+      if (now - this.guardLastCommandAt > 3500) {
+        if (this.defaultMovements) bot.pathfinder.setMovements(this.defaultMovements)
+        bot.pathfinder.setGoal(new GoalNear(center.x, center.y, center.z, 2))
+        this.startPathRecovery('guard return', () => new GoalNear(center.x, center.y, center.z, 2), false)
+        this.guardLastCommandAt = now
+      }
     }
   }
 
   stopGuard ({ silent = false } = {}) {
     if (this.guard?.timer) clearInterval(this.guard.timer)
     this.guard = { enabled: false, timer: null, center: this.guard?.center || null, radius: this.guard?.radius || 16, mode: this.guard?.mode || 'hostile', returnHome: this.guard?.returnHome !== false }
+    this.guardTargetId = null
+    this.guardLastCommandAt = 0
     if (!silent) this.log('info', 'guard stopped')
     return this.snapshot()
   }
@@ -1132,6 +1296,9 @@ class ManagedBot extends EventEmitter {
       webInventoryStarted: this.webInventoryStarted,
       webInventoryUrl: this.webInventoryStarted && cfg.webInventoryPort ? `/inventory/${encodeURIComponent(this.account.id)}/` : null,
       guard: { enabled: this.guard.enabled, center: this.guard.center ? vec(this.guard.center) : null, radius: this.guard.radius, mode: this.guard.mode, returnHome: this.guard.returnHome },
+      autoJump: Boolean(this.autoJumpTimer),
+      leftHold: Boolean(this.leftHoldTimer),
+      rightHold: Boolean(this.rightHoldTimer),
       openWindow: this.currentWindowLabel ? this.getOpenWindowSafe() : null,
       pluginStatus: this.pluginStatus,
       microsoftLogin: this.microsoftLogin,
